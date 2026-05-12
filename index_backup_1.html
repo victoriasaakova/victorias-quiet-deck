@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiet Deck Prototype</title>
+    <meta
+      name="description"
+      content="A minimal interactive prototype for a metaphorical card deck."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div class="page-grid" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <div class="brand-block">
+          <p class="eyebrow">Prototype</p>
+          <h1>Quiet Deck</h1>
+        </div>
+
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+          data-theme-toggle
+        >
+          <span class="theme-toggle__label" data-theme-label>Dark</span>
+        </button>
+      </header>
+
+      <main class="main-layout">
+        <section class="card-stage" aria-live="polite">
+          <div class="deck-stack" data-deck-stack>
+            <div class="deck-stack__side deck-stack__side--left" aria-hidden="true">
+              <div class="stack-card stack-card--back"></div>
+              <div class="stack-card stack-card--preview" data-prev-preview>
+                <div class="stack-card__visual" data-prev-visual></div>
+              </div>
+            </div>
+
+            <article class="deck-card" data-card>
+              <span class="deck-card__id" data-card-id>I</span>
+
+              <div class="deck-card__visual-frame">
+                <div class="deck-card__visual" data-card-visual aria-hidden="true">
+                  <img class="deck-card__image" data-card-image alt="" />
+                </div>
+              </div>
+
+              <div class="deck-card__body">
+                <h2 class="deck-card__title" data-card-title>Threshold</h2>
+                <p class="deck-card__prompt" data-card-prompt>
+                  What are you ready to enter without forcing the answer?
+                </p>
+              </div>
+            </article>
+
+            <div class="deck-stack__side deck-stack__side--right" aria-hidden="true">
+              <div class="stack-card stack-card--preview" data-next-preview>
+                <div class="stack-card__visual" data-next-visual></div>
+              </div>
+              <div class="stack-card stack-card--back"></div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="draw-button" type="button" data-draw-card>Pick a card</button>
+            <p class="controls__caption">
+              Pick another to cycle through the placeholder sketch deck.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
