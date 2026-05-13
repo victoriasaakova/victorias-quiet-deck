@@ -206,6 +206,7 @@ function applyCard(card) {
   visualElement.style.setProperty("--art-secondary", card.art.secondary);
 
   const imagePath = resolveImagePath(card.image);
+  console.log("[Quiet Deck] active image src:", imagePath);
   cardImageElement.src = imagePath;
   cardImageElement.alt = "";
   visualElement.classList.remove("has-image");
@@ -253,6 +254,7 @@ cardImageElement.addEventListener("load", () => {
 });
 
 cardImageElement.addEventListener("error", () => {
+  console.log("[Quiet Deck] image failed to load:", cardImageElement.src);
   visualElement.classList.remove("has-image");
 });
 
