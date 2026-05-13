@@ -1,9 +1,9 @@
 const cards = [
   {
     id: "01",
-    title: "The Observatory",
-    prompt: "What becomes visible when you stop trying to enter?",
-    image: "assets/images/sketch-observatory.jpg",
+    title: "Mirage City",
+    prompt: "What are you projecting onto the place you want to reach?",
+    image: "assets/images/mirage-city.jpg",
     art: {
       primary:
         "radial-gradient(circle at 50% 50%, transparent 0 26%, currentColor 26.2% 26.7%, transparent 27% 100%), linear-gradient(90deg, transparent 0 33%, currentColor 33.2% 33.5%, transparent 33.8% 66%, currentColor 66.2% 66.5%, transparent 66.8% 100%)",
@@ -13,9 +13,9 @@ const cards = [
   },
   {
     id: "02",
-    title: "The Unsaid",
-    prompt: "What part of you has been waiting to be named?",
-    image: "/images/sketch-cards/sketch-02.jpg",
+    title: "Tender Orbit",
+    prompt: "What inside you is still alive and worth protecting?",
+    image: "assets/images/tender-orbit.jpg",
     art: {
       primary:
         "linear-gradient(135deg, transparent 0 49%, currentColor 49.2% 49.6%, transparent 49.8% 100%), linear-gradient(45deg, transparent 0 64%, currentColor 64.2% 64.6%, transparent 64.8% 100%)",
@@ -25,9 +25,9 @@ const cards = [
   },
   {
     id: "03",
-    title: "Inner Weather",
-    prompt: "What is moving through you beneath the surface?",
-    image: "/images/sketch-cards/sketch-03.jpg",
+    title: "Distant Castle",
+    prompt: "What dream have you placed too far away?",
+    image: "assets/images/distant-castle.jpg",
     art: {
       primary:
         "radial-gradient(ellipse at 50% 36%, currentColor 0 0.8%, transparent 1.2%), radial-gradient(ellipse at 42% 51%, transparent 0 18%, currentColor 18.2% 18.5%, transparent 18.8%), radial-gradient(ellipse at 58% 67%, transparent 0 24%, currentColor 24.2% 24.5%, transparent 24.8%)",
@@ -123,7 +123,7 @@ function applyCard(card) {
 
   const imagePath = resolveImagePath(card.image);
   cardImageElement.src = imagePath;
-  cardImageElement.alt = `${card.title} sketch placeholder`;
+  cardImageElement.alt = "";
   visualElement.classList.remove("has-image");
 
   setPreviewArt(prevVisualElement, cards[getAdjacentIndex(-1)]);
