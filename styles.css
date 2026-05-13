@@ -352,14 +352,27 @@ html[data-theme="dark"] .site-shell {
   border: 1px solid var(--line-strong);
 }
 
-.deck-card__visual::before,
-.deck-card__visual::after {
+.deck-card__visual::before {
   display: none;
 }
 
-.deck-card__visual.has-image::before,
-.deck-card__visual.has-image::after {
+.deck-card__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(232, 218, 196, 0.1);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.deck-card__visual.has-image::before {
   display: none;
+}
+
+.deck-card__visual.has-image::after {
+  opacity: 1;
 }
 
 .deck-card__image {

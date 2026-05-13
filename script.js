@@ -35,6 +35,90 @@ const cards = [
         "linear-gradient(180deg, transparent 0 29%, currentColor 29.2% 29.5%, transparent 29.8% 58%, currentColor 58.2% 58.5%, transparent 58.8% 100%)",
     },
   },
+  {
+    id: "04",
+    title: "The In-Between",
+    prompt: "Where do you belong when everything is shifting?",
+    image: "assets/images/the-in-between.jpg",
+    art: {
+      primary:
+        "linear-gradient(135deg, transparent 0 34%, currentColor 34.2% 34.5%, transparent 34.8% 66%, currentColor 66.2% 66.5%, transparent 66.8% 100%)",
+      secondary:
+        "radial-gradient(circle at 50% 50%, transparent 0 30%, currentColor 30.2% 30.5%, transparent 30.8% 100%)",
+    },
+  },
+  {
+    id: "05",
+    title: "The Familiar",
+    prompt: "What part of you sees clearly, even in the dark?",
+    image: "assets/images/the-familiar.jpg",
+    art: {
+      primary:
+        "radial-gradient(circle at 41% 44%, currentColor 0 1.1%, transparent 1.5%), radial-gradient(circle at 59% 44%, currentColor 0 1.1%, transparent 1.5%), linear-gradient(180deg, transparent 0 54%, currentColor 54.2% 54.5%, transparent 54.8% 100%)",
+      secondary:
+        "linear-gradient(90deg, transparent 0 25%, currentColor 25.2% 25.5%, transparent 25.8% 74%, currentColor 74.2% 74.5%, transparent 74.8% 100%)",
+    },
+  },
+  {
+    id: "06",
+    title: "Her Planet",
+    prompt: "What makes you feel like you belong here, too?",
+    image: "assets/images/her-planet.jpg",
+    art: {
+      primary:
+        "radial-gradient(circle at 50% 52%, transparent 0 22%, currentColor 22.2% 22.5%, transparent 22.8% 100%), radial-gradient(circle at 50% 52%, currentColor 0 1%, transparent 1.4%)",
+      secondary:
+        "linear-gradient(180deg, transparent 0 18%, currentColor 18.2% 18.5%, transparent 18.8% 82%, currentColor 82.2% 82.5%, transparent 82.8% 100%)",
+    },
+  },
+  {
+    id: "07",
+    title: "Signal Garden",
+    prompt: "What is trying to reach you through the noise?",
+    image: "assets/images/signal-garden.jpg",
+    art: {
+      primary:
+        "linear-gradient(90deg, transparent 0 17%, currentColor 17.2% 17.5%, transparent 17.8% 50%, currentColor 50.2% 50.5%, transparent 50.8% 83%, currentColor 83.2% 83.5%, transparent 83.8% 100%)",
+      secondary:
+        "radial-gradient(circle at 31% 64%, currentColor 0 1.2%, transparent 1.6%), radial-gradient(circle at 69% 36%, currentColor 0 1.2%, transparent 1.6%)",
+    },
+  },
+  {
+    id: "08",
+    title: "Private Gallery",
+    prompt: "What dream are you hiding even from yourself?",
+    image: "assets/images/private-gallery.jpg",
+    art: {
+      primary:
+        "linear-gradient(180deg, transparent 0 15%, currentColor 15.2% 15.5%, transparent 15.8% 50%, currentColor 50.2% 50.5%, transparent 50.8% 85%, currentColor 85.2% 85.5%, transparent 85.8% 100%)",
+      secondary:
+        "linear-gradient(90deg, transparent 0 20%, currentColor 20.2% 20.5%, transparent 20.8% 80%, currentColor 80.2% 80.5%, transparent 80.8% 100%)",
+    },
+  },
+  {
+    id: "09",
+    title: "Behind the Glass",
+    prompt: "What are you ready to see without interrupting?",
+    image: "assets/images/behind-the-glass.jpg",
+    art: {
+      primary:
+        "linear-gradient(90deg, transparent 0 9%, currentColor 9.2% 9.5%, transparent 9.8% 91%, currentColor 91.2% 91.5%, transparent 91.8% 100%), linear-gradient(180deg, transparent 0 9%, currentColor 9.2% 9.5%, transparent 9.8% 91%, currentColor 91.2% 91.5%, transparent 91.8% 100%)",
+      secondary:
+        "radial-gradient(circle at 50% 50%, transparent 0 34%, currentColor 34.2% 34.5%, transparent 34.8% 100%)",
+    },
+  },
+  {
+    id: "10",
+    title: "Sky Instruments",
+    prompt: "What tools help you understand the unknown?",
+    image: "assets/images/sky-instruments.jpg",
+    art: {
+      primary:
+        "radial-gradient(circle at 50% 28%, currentColor 0 1.1%, transparent 1.5%), linear-gradient(180deg, transparent 0 28%, currentColor 28.2% 28.5%, transparent 28.8% 72%, currentColor 72.2% 72.5%, transparent 72.8% 100%)",
+      secondary:
+        "linear-gradient(45deg, transparent 0 48%, currentColor 48.2% 48.5%, transparent 48.8% 100%), linear-gradient(135deg, transparent 0 52%, currentColor 52.2% 52.5%, transparent 52.8% 100%)",
+    },
+  },
 ];
 
 const themeKey = "quiet-deck-theme";
