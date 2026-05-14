@@ -155,6 +155,42 @@ const cards = [
         "linear-gradient(45deg, transparent 0 49%, currentColor 49.2% 49.5%, transparent 49.8% 100%), linear-gradient(135deg, transparent 0 51%, currentColor 51.2% 51.5%, transparent 51.8% 100%)",
     },
   },
+  {
+    id: "14",
+    title: "The Long Way",
+    prompt: "What kind of companion do you need for this passage?",
+    image: "assets/images/the-long-way.jpg",
+    art: {
+      primary:
+        "linear-gradient(180deg, transparent 0 14%, currentColor 14.2% 14.5%, transparent 14.8% 41%, currentColor 41.2% 41.5%, transparent 41.8% 68%, currentColor 68.2% 68.5%, transparent 68.8% 100%)",
+      secondary:
+        "linear-gradient(45deg, transparent 0 32%, currentColor 32.2% 32.5%, transparent 32.8% 100%), radial-gradient(circle at 76% 72%, currentColor 0 1.2%, transparent 1.6%)",
+    },
+  },
+  {
+    id: "15",
+    title: "The Presence",
+    prompt: "What is watching you from the edge of awareness?",
+    image: "assets/images/the-presence.jpg",
+    art: {
+      primary:
+        "radial-gradient(circle at 50% 38%, currentColor 0 1.2%, transparent 1.6%), radial-gradient(circle at 50% 58%, transparent 0 24%, currentColor 24.2% 24.5%, transparent 24.8% 100%)",
+      secondary:
+        "linear-gradient(90deg, transparent 0 22%, currentColor 22.2% 22.5%, transparent 22.8% 78%, currentColor 78.2% 78.5%, transparent 78.8% 100%)",
+    },
+  },
+  {
+    id: "16",
+    title: "Moon Station",
+    prompt: "What small thing keeps you connected to everything?",
+    image: "assets/images/moon-station.jpg",
+    art: {
+      primary:
+        "radial-gradient(circle at 50% 50%, transparent 0 18%, currentColor 18.2% 18.5%, transparent 18.8% 100%), linear-gradient(180deg, transparent 0 20%, currentColor 20.2% 20.5%, transparent 20.8% 80%, currentColor 80.2% 80.5%, transparent 80.8% 100%)",
+      secondary:
+        "linear-gradient(45deg, transparent 0 47%, currentColor 47.2% 47.5%, transparent 47.8% 100%), linear-gradient(135deg, transparent 0 53%, currentColor 53.2% 53.5%, transparent 53.8% 100%)",
+    },
+  },
 ];
 
 const themeKey = "quiet-deck-theme";
