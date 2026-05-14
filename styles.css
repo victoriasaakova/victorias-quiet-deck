@@ -338,6 +338,11 @@ html[data-theme="dark"] .site-shell {
   display: grid;
   place-items: center;
   width: 100%;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .deck-card__visual {
@@ -348,9 +353,11 @@ html[data-theme="dark"] .site-shell {
   margin: 0 auto;
   box-sizing: border-box;
   background: transparent;
+  outline: none;
+  border: 4px solid var(--button-bg);
+  transform: translateZ(0);
   line-height: 0;
   overflow: hidden;
-  border: 4px solid var(--button-bg);
 }
 
 .deck-card__visual::before {
@@ -375,6 +382,10 @@ html[data-theme="dark"] .site-shell {
   z-index: 2;
   width: 100%;
   height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
   object-fit: contain;
   object-position: center;
   visibility: visible;
