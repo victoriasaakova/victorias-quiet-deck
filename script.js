@@ -119,6 +119,42 @@ const cards = [
         "linear-gradient(45deg, transparent 0 48%, currentColor 48.2% 48.5%, transparent 48.8% 100%), linear-gradient(135deg, transparent 0 52%, currentColor 52.2% 52.5%, transparent 52.8% 100%)",
     },
   },
+  {
+    id: "11",
+    title: "The Current",
+    prompt: "What is moving through you before you understand it?",
+    image: "assets/images/the-current.jpg",
+    art: {
+      primary:
+        "linear-gradient(180deg, transparent 0 18%, currentColor 18.2% 18.5%, transparent 18.8% 47%, currentColor 47.2% 47.5%, transparent 47.8% 76%, currentColor 76.2% 76.5%, transparent 76.8% 100%)",
+      secondary:
+        "radial-gradient(circle at 28% 40%, currentColor 0 1.2%, transparent 1.6%), radial-gradient(circle at 71% 63%, currentColor 0 1.2%, transparent 1.6%)",
+    },
+  },
+  {
+    id: "12",
+    title: "The Game World",
+    prompt: "What rules would make this world worth playing in?",
+    image: "assets/images/the-game-world.jpg",
+    art: {
+      primary:
+        "linear-gradient(90deg, transparent 0 12%, currentColor 12.2% 12.5%, transparent 12.8% 38%, currentColor 38.2% 38.5%, transparent 38.8% 62%, currentColor 62.2% 62.5%, transparent 62.8% 88%, currentColor 88.2% 88.5%, transparent 88.8% 100%)",
+      secondary:
+        "linear-gradient(180deg, transparent 0 24%, currentColor 24.2% 24.5%, transparent 24.8% 76%, currentColor 76.2% 76.5%, transparent 76.8% 100%)",
+    },
+  },
+  {
+    id: "13",
+    title: "The Absolute",
+    prompt: "What calls you beyond the life you already know?",
+    image: "assets/images/the-absolute.jpg",
+    art: {
+      primary:
+        "radial-gradient(circle at 50% 50%, transparent 0 20%, currentColor 20.2% 20.5%, transparent 20.8% 100%), linear-gradient(180deg, transparent 0 16%, currentColor 16.2% 16.5%, transparent 16.8% 84%, currentColor 84.2% 84.5%, transparent 84.8% 100%)",
+      secondary:
+        "linear-gradient(45deg, transparent 0 49%, currentColor 49.2% 49.5%, transparent 49.8% 100%), linear-gradient(135deg, transparent 0 51%, currentColor 51.2% 51.5%, transparent 51.8% 100%)",
+    },
+  },
 ];
 
 const themeKey = "quiet-deck-theme";
