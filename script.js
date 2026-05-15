@@ -261,7 +261,7 @@ function setPreviewArt(element, card) {
 }
 
 function updateButtonCopy() {
-  drawButton.textContent = hasPickedOnce ? "Pick another" : "Pick a card";
+  drawButton.textContent = hasPickedOnce ? "Pick Another" : "Pick a Card";
 }
 
 // ─── Theme ─────────────────────────────────────────────────────────────────────
