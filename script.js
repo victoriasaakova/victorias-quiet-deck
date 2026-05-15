@@ -193,6 +193,7 @@ const cards = [
   },
 ];
 
+// ─── DOM refs ──────────────────────────────────────────────────────────────────
 const themeKey = "quiet-deck-theme";
 const root = document.documentElement;
 const cardElement = document.querySelector("[data-card]");
@@ -207,18 +208,44 @@ const nextVisualElement = document.querySelector("[data-next-visual]");
 const drawButton = document.querySelector("[data-draw-card]");
 const themeButton = document.querySelector("[data-theme-toggle]");
 
+// ─── State ─────────────────────────────────────────────────────────────────────
 let currentCardIndex = 0;
 let hasPickedOnce = false;
 
-function resolveImagePath(imagePath) {
-  if (!imagePath) {
-    return "";
+// Shuffled deck: array of card indices dealt in order, refilled when empty.
+// This guarantees all cards are seen before any repeats.
+let shuffledDeck = [];
+
+function buildShuffledDeck() {
+  // Fisher-Yates shuffle of all indices
+  const indices = cards.map((_, i) => i);
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
   }
 
+  // If the first card of the new deck is the same as the current card,
+  // move it to the end so there's no repeat at the seam between two decks.
+  if (indices[0] === currentCardIndex && indices.length > 1) {
+    indices.push(indices.shift());
+  }
+
+  shuffledDeck = indices;
+}
+
+function drawFromDeck() {
+  if (shuffledDeck.length === 0) {
+    buildShuffledDeck();
+  }
+  return shuffledDeck.shift();
+}
+
+// ─── Helpers ───────────────────────────────────────────────────────────────────
+function resolveImagePath(imagePath) {
+  if (!imagePath) return "";
   if (window.location.protocol === "file:" && imagePath.startsWith("/")) {
     return `.${imagePath}`;
   }
-
   return imagePath;
 }
 
@@ -228,10 +255,7 @@ function getAdjacentIndex(direction) {
 }
 
 function setPreviewArt(element, card) {
-  if (!element) {
-    return;
-  }
-
+  if (!element) return;
   element.style.setProperty("--art-primary", card.art.primary);
   element.style.setProperty("--art-secondary", card.art.secondary);
 }
@@ -240,6 +264,7 @@ function updateButtonCopy() {
   drawButton.textContent = hasPickedOnce ? "Pick another" : "Pick a card";
 }
 
+// ─── Theme ─────────────────────────────────────────────────────────────────────
 function setTheme(theme) {
   const themeText =
     theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
@@ -261,15 +286,13 @@ function setTheme(theme) {
 
 function getPreferredTheme() {
   const storedTheme = localStorage.getItem(themeKey);
-  if (storedTheme === "light" || storedTheme === "dark") {
-    return storedTheme;
-  }
-
+  if (storedTheme === "light" || storedTheme === "dark") return storedTheme;
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 }
 
+// ─── Card rendering ────────────────────────────────────────────────────────────
 function applyCard(card) {
   idElement.textContent = card.id;
   titleElement.textContent = card.title;
@@ -287,16 +310,17 @@ function applyCard(card) {
   updateButtonCopy();
 }
 
+// ─── Draw ──────────────────────────────────────────────────────────────────────
 function drawNextCard() {
-  if (cards.length < 2) {
-    return;
-  }
+  if (cards.length < 2) return;
 
-  let nextIndex = currentCardIndex;
+  const nextIndex = drawFromDeck();
 
-  while (nextIndex === currentCardIndex) {
-    nextIndex = Math.floor(Math.random() * cards.length);
-  }
+  // FIX: preload the image NOW, before the animation starts.
+  // The browser gets 170ms head-start to fetch the file,
+  // so it's likely ready by the time the card flips in.
+  const preloadImg = new Image();
+  preloadImg.src = resolveImagePath(cards[nextIndex].image);
 
   hasPickedOnce = true;
   deckStack.classList.add("is-animating");
@@ -313,8 +337,10 @@ function drawNextCard() {
   }, 420);
 }
 
+// ─── Events ────────────────────────────────────────────────────────────────────
 themeButton.addEventListener("click", () => {
-  const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  const nextTheme =
+    root.getAttribute("data-theme") === "dark" ? "light" : "dark";
   setTheme(nextTheme);
 });
 
@@ -328,5 +354,6 @@ cardImageElement.addEventListener("error", () => {
   visualElement.classList.remove("has-image");
 });
 
+// ─── Init ──────────────────────────────────────────────────────────────────────
 setTheme(getPreferredTheme());
 applyCard(cards[currentCardIndex]);
