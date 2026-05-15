@@ -494,10 +494,11 @@ html[data-theme="dark"] .site-shell {
   outline-offset: 3px;
 }
 
-.site-footer__link svg {
-  width: 1.1rem;
-  height: 1.1rem;
+.site-footer__link iconify-icon {
+  width: 1.2rem;
+  height: 1.2rem;
   display: block;
+  color: currentColor;
 }
 
 @media (max-width: 700px) {
