@@ -357,3 +357,13 @@ cardImageElement.addEventListener("error", () => {
 // ─── Init ──────────────────────────────────────────────────────────────────────
 setTheme(getPreferredTheme());
 applyCard(cards[currentCardIndex]);
+
+// Preload all card images on init so switching is instant
+function preloadAllImages() {
+  cards.forEach((card) => {
+    const img = new Image();
+    img.src = resolveImagePath(card.image);
+  });
+}
+
+preloadAllImages();
