@@ -7,6 +7,7 @@ const cards = [
       title: "Мираж",
       prompt: "Что ты уже знаешь о будущем, которое ещё не наступило?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/mirage-city.jpg",
     art: {
       primary:
@@ -23,6 +24,7 @@ const cards = [
       title: "Орбита",
       prompt: "Что в тебе ещё живо и просит о бережности?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/tender-orbit.jpg",
     art: {
       primary:
@@ -39,6 +41,7 @@ const cards = [
       title: "Дальний план",
       prompt: "Чего ты ждёшь, чтобы разрешить себе это хотеть?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/distant-castle.jpg",
     art: {
       primary:
@@ -55,6 +58,7 @@ const cards = [
       title: "Между",
       prompt: "Что держит тебя, когда не за что держаться?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/the-in-between.jpg",
     art: {
       primary:
@@ -71,6 +75,7 @@ const cards = [
       title: "То, что видит",
       prompt: "Что в тебе видит ясно, даже когда темно?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/the-familiar.jpg",
     art: {
       primary:
@@ -87,6 +92,7 @@ const cards = [
       title: "Её планета",
       prompt: "Что значит чувствовать себя дома в собственной жизни?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/her-planet.jpg",
     art: {
       primary:
@@ -103,6 +109,7 @@ const cards = [
       title: "Сад сигналов",
       prompt: "Что возвращается снова и снова, пока ты это не замечаешь?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/signal-garden.jpg",
     art: {
       primary:
@@ -119,6 +126,7 @@ const cards = [
       title: "Личная галерея",
       prompt: "Что рождается в тебе, когда нет ни одного взгляда, даже твоего?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/private-gallery.jpg",
     art: {
       primary:
@@ -135,6 +143,7 @@ const cards = [
       title: "За стеклом",
       prompt: "Что ты видишь, когда перестаёшь пытаться это исправить?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/behind-the-glass.jpg",
     art: {
       primary:
@@ -151,6 +160,7 @@ const cards = [
       title: "Небесный атлас",
       prompt: "На что ты опираешься, когда нет ориентиров?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/sky-instruments.jpg",
     art: {
       primary:
@@ -167,6 +177,7 @@ const cards = [
       title: "Течение",
       prompt: "Что движется через тебя до того, как ты это понимаешь?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/the-current.jpg",
     art: {
       primary:
@@ -183,6 +194,7 @@ const cards = [
       title: "Мир игры",
       prompt: "Что стало бы правилом, если бы мир создавался под тебя?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/the-game-world.jpg",
     art: {
       primary:
@@ -199,6 +211,7 @@ const cards = [
       title: "Абсолют",
       prompt: "Что становится возможным, когда вопрос о готовности исчезает?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/the-absolute.jpg",
     art: {
       primary:
@@ -215,6 +228,7 @@ const cards = [
       title: "Долгий путь",
       prompt: "Кто нужен рядом, чтобы пройти этот путь?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/the-long-way.jpg",
     art: {
       primary:
@@ -231,6 +245,7 @@ const cards = [
       title: "Присутствие",
       prompt: "Что стоит на краю твоего внимания и ждёт, пока ты обернёшься?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/the-presence.jpg",
     art: {
       primary:
@@ -247,6 +262,7 @@ const cards = [
       title: "Лунная станция",
       prompt: "Что маленькое соединяет тебя с чем-то большим?",
     },
+    deeper: { en: "", ru: "" },
     image: "assets/images/moon-station.jpg",
     art: {
       primary:
@@ -272,14 +288,13 @@ const nextVisualElement = document.querySelector("[data-next-visual]");
 const drawButton = document.querySelector("[data-draw-card]");
 const languageButton = document.querySelector("[data-lang-toggle]");
 const themeButton = document.querySelector("[data-theme-toggle]");
-const chatTrigger = document.querySelector("[data-chat-trigger]");
-const chatModal = document.querySelector("[data-chat-modal]");
-const chatClose = document.querySelector("[data-chat-close]");
-const chatMessagesEl = document.querySelector("[data-chat-messages]");
-const chatChipsEl = document.querySelector("[data-chat-chips]");
-const chatInput = document.querySelector("[data-chat-input]");
-const chatSend = document.querySelector("[data-chat-send]");
-const chatHeaderTitle = document.querySelector("[data-chat-header-title]");
+const diveButton = document.querySelector("[data-dive]");
+const diveModal = document.querySelector("[data-dive-modal]");
+const diveClose = document.querySelector("[data-dive-close]");
+const diveText = document.querySelector("[data-dive-text]");
+const diveInput = document.querySelector("[data-dive-input]");
+const diveSend = document.querySelector("[data-dive-send]");
+const diveResponse = document.querySelector("[data-dive-response]");
 
 // ─── State ─────────────────────────────────────────────────────────────────────
 let currentCardIndex = 0;
@@ -370,105 +385,59 @@ function setLanguage(lang) {
   currentLang = lang;
   updateLanguageButton();
   applyCard(cards[currentCardIndex]);
+  if (diveButton) diveButton.textContent = lang === "ru" ? "Погрузиться" : "Go Deeper";
+  if (diveInput) {
+    diveInput.placeholder =
+      lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
+  }
 }
 
-// ─── Chat ──────────────────────────────────────────────────────────────────────
-const CHIPS = {
-  en: [
-    "What am I feeling right now?",
-    "What is holding me back?",
-    "What do I truly want?",
-    "What would I do if I wasn't afraid?",
-  ],
-  ru: [
-    "Что я сейчас чувствую?",
-    "Что меня удерживает?",
-    "Чего я хочу на самом деле?",
-    "Что бы я сделал, если бы не боялся?",
-  ],
-};
-
-const OPENING = {
-  en: "Take a moment with this card. What comes up for you?",
-  ru: "Побудь немного с этой картой. Что в тебе откликается?",
-};
-
-const HEADER = { en: "Reflection", ru: "Рефлексия" };
-
-const SYSTEM_PROMPT = `You are a coaching presence for a metaphorical card deck called "Victoria's Quiet Deck".
-Rules:
-- Ask one question at a time
-- No advice, no interpretation — only open questions and reflection
-- Use Theory U approach: slowing down, presencing, openness
-- Language: "what do you notice...", "what does this mean for you...", "what is happening right now..."
-- Work with the card image, do not explain it
-- Always respond in the same language the user writes in`;
-
-let chatHistory = [];
-let chatInitialized = false;
-
-function renderChips() {
-  chatChipsEl.innerHTML = "";
-  CHIPS[currentLang].forEach((q) => {
-    const btn = document.createElement("button");
-    btn.className = "chat-chip";
-    btn.textContent = q;
-    btn.addEventListener("click", () => sendMessage(q));
-    chatChipsEl.appendChild(btn);
-  });
+// ─── Go deeper ────────────────────────────────────────────────────────────────
+async function openDive() {
+  const card = cards[currentCardIndex];
+  const lang = currentLang;
+  diveText.textContent = card.deeper[lang] || card.deeper.en;
+  diveResponse.textContent = "";
+  diveInput.value = "";
+  diveModal.removeAttribute("hidden");
 }
 
-function addMessage(role, text) {
-  const div = document.createElement("div");
-  div.className = role === "user" ? "chat-msg-user" : "chat-msg-assistant";
-  div.textContent = text;
-  chatMessagesEl.appendChild(div);
-  chatMessagesEl.scrollTop = chatMessagesEl.scrollHeight;
-}
+async function sendDive() {
+  const text = diveInput.value.trim();
+  if (!text) return;
+  const card = cards[currentCardIndex];
+  const lang = currentLang;
+  diveSend.disabled = true;
+  diveResponse.textContent = lang === "ru" ? "Думаю..." : "Thinking...";
 
-async function sendMessage(text) {
-  if (!text.trim()) return;
-  addMessage("user", text);
-  chatInput.value = "";
+  const systemPrompt =
+    lang === "ru"
+      ? `Ты — коучинговое присутствие для колоды метафорических карт "Victoria's Quiet Deck". Отвечай кратко — 2-3 предложения. Без советов. Только отражение и один вопрос в конце.`
+      : `You are a coaching presence for "Victoria's Quiet Deck" card deck. Reply briefly — 2-3 sentences. No advice. Only reflection and one question at the end.`;
 
-  chatHistory.push({ role: "user", content: text });
-
-  const messages = [{ role: "system", content: SYSTEM_PROMPT }, ...chatHistory];
+  const cardContext =
+    lang === "ru"
+      ? `Карта: ${card.ru.title}. Вопрос карты: ${card.ru.prompt}. Описание: ${card.deeper.ru}`
+      : `Card: ${card.title}. Card question: ${card.prompt}. Description: ${card.deeper.en}`;
 
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages }),
+      body: JSON.stringify({
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: `${cardContext}\n\nUser writes: ${text}` },
+        ],
+      }),
     });
     const data = await res.json();
-    const reply = data.choices[0].message.content;
-    chatHistory.push({ role: "assistant", content: reply });
-    addMessage("assistant", reply);
-  } catch (e) {
-    addMessage(
-      "assistant",
-      currentLang === "ru" ? "Что-то пошло не так." : "Something went wrong.",
-    );
+    diveResponse.textContent = data.choices[0].message.content;
+  } catch {
+    diveResponse.textContent =
+      lang === "ru" ? "Что-то пошло не так." : "Something went wrong.";
   }
-}
-
-function openChat() {
-  chatModal.removeAttribute("hidden");
-  chatHeaderTitle.textContent = HEADER[currentLang];
-  renderChips();
-  if (!chatInitialized) {
-    chatInitialized = true;
-    const opening = OPENING[currentLang];
-    chatHistory = [{ role: "assistant", content: opening }];
-    addMessage("assistant", opening);
-  }
-}
-
-function resetChat() {
-  chatHistory = [];
-  chatInitialized = false;
-  chatMessagesEl.innerHTML = "";
+  diveSend.disabled = false;
 }
 
 // ─── Theme ─────────────────────────────────────────────────────────────────────
@@ -522,7 +491,6 @@ function applyCard(card) {
 function drawNextCard() {
   if (cards.length < 2) return;
 
-  resetChat();
   const nextIndex = drawFromDeck();
 
   // FIX: preload the image NOW, before the animation starts.
@@ -532,7 +500,7 @@ function drawNextCard() {
   preloadImg.src = resolveImagePath(cards[nextIndex].image);
 
   hasPickedOnce = true;
-  chatModal.setAttribute("hidden", "");
+  diveModal.setAttribute("hidden", "");
   deckStack.classList.add("is-animating");
   cardElement.classList.add("is-changing");
 
@@ -560,11 +528,11 @@ languageButton.addEventListener("click", () => {
 
 drawButton.addEventListener("click", drawNextCard);
 
-chatTrigger.addEventListener("click", openChat);
-chatClose.addEventListener("click", () => chatModal.setAttribute("hidden", ""));
-chatSend.addEventListener("click", () => sendMessage(chatInput.value));
-chatInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") sendMessage(chatInput.value);
+diveButton.addEventListener("click", openDive);
+diveClose.addEventListener("click", () => diveModal.setAttribute("hidden", ""));
+diveSend.addEventListener("click", sendDive);
+diveInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") sendDive();
 });
 
 cardImageElement.addEventListener("load", () => {

@@ -103,6 +103,7 @@
                 <p class="deck-card__prompt" data-card-prompt>
                   What are you projecting onto the place you want to reach?
                 </p>
+                <button data-dive type="button" data-dive-label-en="Go Deeper" data-dive-label-ru="Погрузиться">Go Deeper</button>
               </div>
             </article>
 
@@ -162,26 +163,16 @@
       </footer>
     </div>
 
-    <!-- Chat trigger: fixed round button bottom right -->
-    <button data-chat-trigger aria-label="Open chat">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>
-    </button>
-
-    <!-- Chat popup modal -->
-    <div data-chat-modal hidden>
-      <div data-chat-header>
-        <span data-chat-header-title>Reflection</span>
-        <button data-chat-close aria-label="Close">×</button>
+    <div data-dive-modal hidden>
+      <div data-dive-header>
+        <button data-dive-close aria-label="Close">×</button>
       </div>
-      <div data-chat-messages></div>
-      <div data-chat-chips></div>
-      <div data-chat-input-row>
-        <input data-chat-input type="text" autocomplete="off">
-        <button data-chat-send>→</button>
+      <div data-dive-text></div>
+      <div data-dive-interact>
+        <input data-dive-input type="text" placeholder="What does this bring up for you?">
+        <button data-dive-send>→</button>
       </div>
+      <div data-dive-response></div>
     </div>
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
