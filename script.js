@@ -26,7 +26,7 @@ const cards = [
   {
     id: "03",
     title: "Distant Castle",
-    prompt: "What dream have you placed too far away?",
+    prompt: "What are you waiting for before you allow yourself to want this?",
     image: "assets/images/distant-castle.jpg",
     art: {
       primary:
@@ -38,7 +38,7 @@ const cards = [
   {
     id: "04",
     title: "The In-Between",
-    prompt: "Where do you belong when everything is shifting?",
+    prompt: "What holds you when there is nothing to hold onto?",
     image: "assets/images/the-in-between.jpg",
     art: {
       primary:
@@ -62,7 +62,7 @@ const cards = [
   {
     id: "06",
     title: "Her Planet",
-    prompt: "What makes you feel like you belong here, too?",
+    prompt: "What would it mean to stop being a guest in your own life?",
     image: "assets/images/her-planet.jpg",
     art: {
       primary:
@@ -74,7 +74,7 @@ const cards = [
   {
     id: "07",
     title: "Signal Garden",
-    prompt: "What is trying to reach you through the noise?",
+    prompt: "What keeps returning to you until you finally pay attention?",
     image: "assets/images/signal-garden.jpg",
     art: {
       primary:
@@ -86,7 +86,7 @@ const cards = [
   {
     id: "08",
     title: "Private Gallery",
-    prompt: "What dream are you hiding even from yourself?",
+    prompt: "What would you make if no one — including you — was watching?",
     image: "assets/images/private-gallery.jpg",
     art: {
       primary:
@@ -98,7 +98,7 @@ const cards = [
   {
     id: "09",
     title: "Behind the Glass",
-    prompt: "What are you ready to see without interrupting?",
+    prompt: "What becomes visible when you stop trying to change what you see?",
     image: "assets/images/behind-the-glass.jpg",
     art: {
       primary:
@@ -110,7 +110,7 @@ const cards = [
   {
     id: "10",
     title: "Sky Instruments",
-    prompt: "What tools help you understand the unknown?",
+    prompt: "What helps you navigate when there are no maps?",
     image: "assets/images/sky-instruments.jpg",
     art: {
       primary:
@@ -134,7 +134,7 @@ const cards = [
   {
     id: "12",
     title: "The Game World",
-    prompt: "What rules would make this world worth playing in?",
+    prompt: "What would the rules be, if you were the one writing them?",
     image: "assets/images/the-game-world.jpg",
     art: {
       primary:
@@ -146,7 +146,7 @@ const cards = [
   {
     id: "13",
     title: "The Absolute",
-    prompt: "What calls you beyond the life you already know?",
+    prompt: "What would you do if you stopped asking whether you are ready?",
     image: "assets/images/the-absolute.jpg",
     art: {
       primary:
@@ -182,7 +182,7 @@ const cards = [
   {
     id: "16",
     title: "Moon Station",
-    prompt: "What small thing keeps you connected to everything?",
+    prompt: "What ordinary thing reminds you that you belong to something larger?",
     image: "assets/images/moon-station.jpg",
     art: {
       primary:
