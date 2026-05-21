@@ -522,10 +522,33 @@ html.lang-ru [data-card-title] {
 }
 
 .site-footer__link iconify-icon {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 20px;
+  height: 20px;
   display: block;
   color: currentColor;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    position: fixed;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer__links {
+    flex-direction: column;
+    gap: 16px;
+    min-height: 0;
+  }
+
+  .site-footer__link iconify-icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 700px) {
