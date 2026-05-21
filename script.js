@@ -7,7 +7,7 @@ const cards = [
       title: "Мираж",
       prompt: "Что ты уже знаешь о будущем, которое ещё не наступило?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "The card shows a city skyline seen from across a stretch of water or open ground. In the foreground, a small flower or spindly figure grows alone. At the bottom right, something round and mossy is half-buried, almost swallowed by the earth. The city is real and unreachable at the same time. You are looking at it from outside, from the low ground, from the side where things are still small and uncertain. The skyline does not move toward you.", ru: "На карте — силуэт города, видный издали, через полосу воды или открытого пространства. На переднем плане — тонкий цветок или хрупкая фигурка, одна. В правом нижнем углу что-то круглое и мшистое наполовину ушло в землю. Город одновременно настоящий и недосягаемый. Ты смотришь на него снаружи, с низкого места, оттуда, где вещи ещё маленькие и неопределённые. Силуэт не движется тебе навстречу." },
     image: "assets/images/mirage-city.jpg",
     art: {
       primary:
@@ -24,7 +24,7 @@ const cards = [
       title: "Орбита",
       prompt: "Что в тебе ещё живо и просит о бережности?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A massive creature fills the frame — dense with fur or spines, curled tightly into itself like a sleeping planet. Its texture is layered and alive, covered in marks that could be wounds or stars. Around it: the emptiness of space, a full moon, another distant sphere. Whatever is inside that curl is protected by the sheer weight of its own being.", ru: "Огромное существо заполняет весь кадр — плотное, меховое или колючее, туго свернувшееся в себя, как спящая планета. Его фактура живая, в отметинах, которые могут быть ранами или звёздами. Вокруг — космическая пустота, полная луна, ещё один далёкий шар. Всё, что свернулось внутри этого кольца, защищено самой тяжестью собственного бытия." },
     image: "assets/images/tender-orbit.jpg",
     art: {
       primary:
@@ -41,7 +41,7 @@ const cards = [
       title: "Дальний план",
       prompt: "Чего ты ждёшь, чтобы разрешить себе это хотеть?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A strange building stands at night under a scattered, dotted sky. Its roof is a great rounded dome — heavy and mushroom-like — pressing down on a squat body with three circular windows and a single arched door. Mountains rise sharply in the distance. The place is sealed, self-contained, improbable. It is not waiting to be entered. It is simply there — further away than it looks.", ru: "Странное здание стоит ночью под усыпанным точками небом. Его кровля — огромный округлый купол, тяжёлый, давящий на приземистый корпус с тремя круглыми окнами и одной арочной дверью. Вдали резко поднимаются горы. Место закрытое, самодостаточное, невероятное. Оно не ждёт, чтобы в него вошли. Оно просто есть — дальше, чем кажется." },
     image: "assets/images/distant-castle.jpg",
     art: {
       primary:
@@ -58,7 +58,7 @@ const cards = [
       title: "Между",
       prompt: "Что держит тебя, когда не за что держаться?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A checkerboard plane stretches into the distance, the black and white squares pulling the eye toward a horizon that never arrives. In the middle of it, a large slab or monolith hangs suspended — attached to nothing, going nowhere. A moon with a closed human face floats to the right, calm and unreachable. This is a place between places, where the usual rules about before and after don\'t quite apply.", ru: "Шахматная плоскость уходит вдаль, чёрно-белые клетки тянут взгляд к горизонту, который так и не наступает. Посередине висит большая плита или монолит — ни к чему не прикреплённый, никуда не движущийся. Луна с закрытым человеческим лицом плывёт справа — спокойная и недостижимая. Это место между местами, где привычные правила о до и после не совсем работают." },
     image: "assets/images/the-in-between.jpg",
     art: {
       primary:
@@ -75,7 +75,7 @@ const cards = [
       title: "То, что видит",
       prompt: "Что в тебе видит ясно, даже когда темно?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A dark figure stands in a night landscape — ears pointed like a cat or a fox, body dense with texture. The sky above is wild, full of turbulent marks that spiral and press down. The figure is not running, not hiding. It faces outward, into the dark. Whatever made this night so turbulent is not visible — but the figure knows it is there. It has always known. This is someone who does not need the lights on to see.", ru: "Тёмная фигура стоит в ночном пейзаже — уши заострены, как у кошки или лисы, тело плотное, фактурное. Небо над ней бурное, полное вихревых штрихов, которые спирально давят вниз. Фигура не бежит, не прячется. Она смотрит вперёд, в темноту. То, что сделало эту ночь такой бурной, не видно — но фигура знает, что оно там. Это кто-то, кому не нужен свет, чтобы видеть." },
     image: "assets/images/the-familiar.jpg",
     art: {
       primary:
@@ -92,7 +92,7 @@ const cards = [
       title: "Её планета",
       prompt: "Что значит чувствовать себя дома в собственной жизни?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A vast creature sits on an open shore — its body enormous, textured like bark or earth, its head a dense spiral with no center. One arm is raised slightly, as if caught mid-gesture. Small palm-like plants grow below, delicate and unafraid. The creature does not seem lost. It seems to be somewhere that belongs to it — or to be something the landscape belongs to. The scale is off. And yet it fits.", ru: "Огромное существо сидит на открытом берегу — тело исполинское, фактурное, как кора или земля, голова — плотная спираль без центра. Одна рука слегка поднята, словно застыла в жесте. Внизу растут маленькие пальмообразные растения — хрупкие и бесстрашные. Существо не кажется потерявшимся. Масштаб нарушен. И всё же — всё на месте." },
     image: "assets/images/her-planet.jpg",
     art: {
       primary:
@@ -109,7 +109,7 @@ const cards = [
       title: "Сад сигналов",
       prompt: "Что возвращается снова и снова, пока ты это не замечаешь?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "An outdoor space at night, alive with signals. A large mirror ball blazes on the left, its light spilling outward. Trees are strung with bulbs that hang like punctuation marks. A crowd presses forward on the right. The energy is electric and not entirely comfortable — too much input, too many things calling for attention at once. Something in this picture has been sending you a signal for a while.", ru: "Открытое пространство ночью, живое от сигналов. Слева пылает большой зеркальный шар, его свет разливается наружу. Деревья увешаны лампочками. Справа толпа давит вперёд. Энергия электрическая и не вполне комфортная — слишком много входящего, слишком много всего, требующего внимания одновременно. Что-то в этой картине посылает тебе сигнал уже какое-то время." },
     image: "assets/images/signal-garden.jpg",
     art: {
       primary:
@@ -126,7 +126,7 @@ const cards = [
       title: "Личная галерея",
       prompt: "Что рождается в тебе, когда нет ни одного взгляда, даже твоего?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A solitary figure stands at a tall window, looking out over a dense cityscape from high above. Seen from behind, completely still. The room behind is dark; the world outside is lit. Nothing is performed here. This is a private moment — thought that hasn\'t become words yet, feeling that hasn\'t become action. Whatever this is, it belongs entirely to the one looking.", ru: "Одинокая фигура стоит у высокого окна, глядя на плотный городской пейзаж сверху. Видна со спины, совершенно неподвижная. Комната сзади тёмная; мир снаружи освещён. Здесь ничего не исполняется. Это частный момент — мысль, которая ещё не стала словами. Всё это принадлежит только тому, кто смотрит." },
     image: "assets/images/private-gallery.jpg",
     art: {
       primary:
@@ -143,7 +143,7 @@ const cards = [
       title: "За стеклом",
       prompt: "Что ты видишь, когда перестаёшь пытаться это исправить?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A figure stands at a large window or behind glass, separated from what is outside. The glass is not a barrier — it is a frame. It allows seeing without being pulled in, witnessing without intervening. Whatever is on the other side has been there the whole time. The question is not what you see. It is what you have been willing to look at.", ru: "Фигура стоит у большого окна или за стеклом, отделённая от того, что снаружи. Стекло — не барьер, а рама. Оно позволяет видеть, не будучи втянутым, наблюдать, не вмешиваясь. То, что по ту сторону, было там всё это время. Вопрос не в том, что ты видишь. А в том, на что ты был готов смотреть." },
     image: "assets/images/behind-the-glass.jpg",
     art: {
       primary:
@@ -160,7 +160,7 @@ const cards = [
       title: "Небесный атлас",
       prompt: "На что ты опираешься, когда нет ориентиров?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A complex of domes, towers, and rooftop structures rises against an open sky. On the lower left, a glass greenhouse dome sits apart — contained and transparent. The foreground is a rolling organic terrain: spiraling forms, mushrooms, paths that curve without destination. There are no instruments visible in the conventional sense — and yet the whole image is a structure for reading something that cannot be read by looking straight at it. You navigate by the shape of things, not their labels.", ru: "Комплекс куполов, башен и надкровельных конструкций поднимается на фоне открытого неба. В нижнем левом углу стоит отдельно стеклянный купол-теплица — замкнутый и прозрачный. Передний план — живой органический рельеф: спиральные формы, грибы, тропы без пункта назначения. Никаких инструментов в обычном смысле не видно — и всё же весь образ является конструкцией для считывания того, что нельзя считать, глядя прямо. Ты ориентируешься по форме вещей, а не по их названиям." },
     image: "assets/images/sky-instruments.jpg",
     art: {
       primary:
@@ -177,7 +177,7 @@ const cards = [
       title: "Течение",
       prompt: "Что движется через тебя до того, как ты это понимаешь?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A single tree stands at the edge of moving water — its roots in the bank, its branches reaching back over the stream. The water around it is alive with marks, current visible in the texture. The tree does not resist the current. It is rooted here, in this particular bend of this particular river, where the water has been moving through for longer than memory. Something is passing. The tree knows it before you do.", ru: "Одинокое дерево стоит у края движущейся воды — корни в берегу, ветви тянутся обратно над ручьём. Вода вокруг него живая, течение видно в фактуре. Дерево не сопротивляется течению. Оно укоренено здесь, в этом конкретном изгибе этой конкретной реки, где вода движется дольше, чем хватает памяти. Что-то проходит. Дерево знает это раньше тебя." },
     image: "assets/images/the-current.jpg",
     art: {
       primary:
@@ -194,7 +194,7 @@ const cards = [
       title: "Мир игры",
       prompt: "Что стало бы правилом, если бы мир создавался под тебя?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A surreal urban-natural space, layered and unstable. At the back, great arched gates loom without walls — doorways to nothing, or to everything. In the upper left, handwritten text: \'don\'t follow it\' and \'it\'s not real.\' In the foreground, tangled roots pressed into the earth. The place runs on its own logic. This is a world with rules — you just don\'t know whose rules they are yet.", ru: "Сюрреалистическое городско-природное пространство, многослойное и нестабильное. Сзади нависают большие арочные ворота без стен — двери в ничто или во всё. В верхнем левом углу рукописный текст: \'don\'t follow it\' и \'it\'s not real.\' На переднем плане — переплетённые корни, вдавленные в землю. Место работает по своей логике. Это мир с правилами — ты просто ещё не знаешь, чьи они." },
     image: "assets/images/the-game-world.jpg",
     art: {
       primary:
@@ -211,7 +211,7 @@ const cards = [
       title: "Абсолют",
       prompt: "Что становится возможным, когда вопрос о готовности исчезает?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A vast landscape opens in all directions — mountains, a winding path, rough terrain that seems to breathe. At the center of the sky, a great circular form radiates outward in sweeping marks. At its center: an eye. One eye, fully open, looking down at everything. Not judging. Simply seeing. The forces at work here are older than any decision you have been avoiding. The eye has not been waiting for you to be ready.", ru: "Огромный пейзаж открывается во все стороны — горы, извивающаяся тропа, грубый рельеф, который, кажется, дышит. В центре неба большая круговая форма излучается наружу широкими штрихами. В её центре — глаз. Один глаз, полностью открытый, смотрящий вниз на всё. Не судящий. Просто видящий. Силы, которые действуют здесь, старше любого решения, которого ты избегал." },
     image: "assets/images/the-absolute.jpg",
     art: {
       primary:
@@ -228,7 +228,7 @@ const cards = [
       title: "Долгий путь",
       prompt: "Кто нужен рядом, чтобы пройти этот путь?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "The scene is inside a vehicle moving through a landscape — seen from outside, through large windows. The central figure is a woman with long hair and round glasses, facing forward. Another figure beside her, watching a different direction. The landscape outside is moving; the figures inside are still. This is a journey already underway — not a departure, not an arrival. The question is not whether to go, but who is beside you as you do.", ru: "Сцена — внутри движущегося транспортного средства, вид снаружи через большие окна. Центральная фигура — женщина с длинными волосами и круглыми очками, смотрит вперёд. Рядом другая фигура, смотрящая в другую сторону. Пейзаж снаружи движется; фигуры внутри неподвижны. Это путешествие уже в процессе — не отъезд, не прибытие. Вопрос не в том, ехать ли, а в том, кто рядом, пока едешь." },
     image: "assets/images/the-long-way.jpg",
     art: {
       primary:
@@ -245,7 +245,7 @@ const cards = [
       title: "Присутствие",
       prompt: "Что стоит на краю твоего внимания и ждёт, пока ты обернёшься?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A city at night — rooftops, buildings, familiar urban geometry in the lower half. Above them, the sky is not sky: it is a mass of dark, swirling forms that seem to have a face — or a body — or both. Something enormous is present just above the roofline. The buildings below go on as if nothing is above them. But something is above them. It is not threatening — it is simply there, at the edge of attention, watching from the place where day hasn\'t quite started and night hasn\'t quite ended.", ru: "Ночной город — крыши, здания, привычная городская геометрия в нижней половине. Над ними небо — не небо: масса тёмных, вихревых форм, у которых, кажется, есть лицо — или тело — или и то, и другое. Что-то огромное присутствует прямо над линией крыш. Здания внизу продолжают стоять, словно ничего нет над ними. Оно не угрожает — оно просто здесь, на краю внимания, наблюдает оттуда, где день ещё не начался и ночь ещё не закончилась." },
     image: "assets/images/the-presence.jpg",
     art: {
       primary:
@@ -262,7 +262,7 @@ const cards = [
       title: "Лунная станция",
       prompt: "Что маленькое соединяет тебя с чем-то большим?",
     },
-    deeper: { en: "", ru: "" },
+    deeper: { en: "A small figure stands alone in an immense open landscape. Its head is a crescent moon — curved, dark, eyes closed. The body is simple, upright, still. The scale is the point. The figure is not lost — it is placed. It stands on the surface of something much larger than itself, and this does not seem to frighten it. Whatever connects this small figure to the enormity around it is invisible, but it is holding.", ru: "Маленькая фигура стоит одна в огромном открытом пейзаже. Её голова — серп луны: изогнутый, тёмный, с закрытыми глазами. Тело простое, прямое, неподвижное. Масштаб — это и есть суть. Фигура не потеряна — она помещена. Она стоит на поверхности чего-то гораздо большего, чем она сама, и это, кажется, её не пугает. То, что соединяет эту фигуру с окружающей огромностью, невидимо — но оно держит." },
     image: "assets/images/moon-station.jpg",
     art: {
       primary:
