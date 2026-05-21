@@ -401,15 +401,39 @@ function setLanguage(lang) {
 async function openDive() {
   const card = cards[currentCardIndex];
   const lang = currentLang;
-  diveText.textContent = card.deeper[lang] || card.deeper.en;
-  diveQuestion.textContent =
-    lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
+
+  diveText.textContent = lang === "ru" ? "Читаю карту..." : "Reading the card...";
+  diveQuestion.textContent = lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
   diveResponse.textContent = "";
   diveInput.value = "";
-  diveInput.placeholder =
-    lang === "ru" ? "расскажи в паре слов" : "tell me in a few words";
+  diveInput.placeholder = lang === "ru" ? "расскажи в паре слов" : "tell me in a few words";
   diveInput.style.height = "auto";
   diveModal.removeAttribute("hidden");
+
+  const systemPrompt = lang === "ru"
+    ? "Ты — поэтический голос колоды метафорических карт. Напиши 2-3 предложения о карте — коротко, образно, без пересказа деталей. Пиши как медитация. Никакого жаргона."
+    : "You are the poetic voice of a metaphorical card deck. Write 2-3 sentences about this card — brief, imagistic, no literal description. Write as meditation. No jargon.";
+
+  const cardInfo = lang === "ru"
+    ? "Карта: " + card.ru.title + ". Вопрос: " + card.ru.prompt + "."
+    : "Card: " + card.title + ". Question: " + card.prompt + ".";
+
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: cardInfo }
+        ]
+      })
+    });
+    const data = await res.json();
+    diveText.textContent = data.choices[0].message.content;
+  } catch {
+    diveText.textContent = lang === "ru" ? card.deeper.ru : card.deeper.en;
+  }
 }
 
 async function sendDive() {
