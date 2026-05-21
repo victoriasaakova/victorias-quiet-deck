@@ -584,19 +584,21 @@ html.lang-ru [data-card-title] {
 }
 
 [data-dive-send] {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  border: 1.5px solid currentColor;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border: none;
   border-radius: 50%;
-  background: transparent;
+  background: currentColor;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   align-self: flex-end;
   flex-shrink: 0;
-  color: inherit;
+  color: var(--page-bg, #eae7e0);
+  font-size: 20px;
+  font-weight: 300;
   padding: 0;
 }
 
