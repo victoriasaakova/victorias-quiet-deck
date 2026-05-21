@@ -38,6 +38,7 @@
       href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -165,13 +166,17 @@
 
     <div data-dive-modal hidden>
       <div data-dive-header>
-        <button data-dive-close aria-label="Close">×</button>
+        <button data-dive-close aria-label="Close">
+          <span class="iconify" data-icon="material-symbols-light:close" style="font-size:24px;" aria-hidden="true"></span>
+        </button>
       </div>
       <div data-dive-text></div>
       <div data-dive-interact>
         <p data-dive-question></p>
         <textarea data-dive-input rows="1" placeholder="tell me in a few words"></textarea>
-        <button data-dive-send>→</button>
+        <button data-dive-send>
+          <span class="iconify" data-icon="mdi-light:chevron-right" style="font-size:18px;" aria-hidden="true"></span>
+        </button>
       </div>
       <div data-dive-response></div>
     </div>
