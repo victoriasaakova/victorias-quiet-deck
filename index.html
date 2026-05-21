@@ -116,6 +116,7 @@
 
           <div class="controls">
             <button class="draw-button" type="button" data-draw-card>Pick a Card</button>
+            <button data-chat-toggle type="button" aria-label="Спросить о карте">Спросить о карте</button>
           </div>
         </section>
       </main>
@@ -160,6 +161,14 @@
           </a>
         </div>
       </footer>
+    </div>
+
+    <div data-chat-panel hidden>
+      <div data-chat-messages></div>
+      <div data-chat-input-row>
+        <input data-chat-input type="text" placeholder="Напиши что думаешь...">
+        <button data-chat-send type="button">→</button>
+      </div>
     </div>
 
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
