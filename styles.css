@@ -488,8 +488,8 @@ html.lang-ru [data-card-title] {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: currentColor;
-  color: inherit;
+  background: var(--button-bg);
+  color: var(--button-text);
   border: none;
   cursor: pointer;
   display: flex;
@@ -499,7 +499,7 @@ html.lang-ru [data-card-title] {
 }
 
 [data-chat-trigger] svg {
-  color: var(--page-bg, #eae7e0);
+  color: currentColor;
 }
 
 /* Chat modal */
@@ -509,9 +509,10 @@ html.lang-ru [data-card-title] {
   right: 2rem;
   width: 320px;
   max-height: 480px;
-  border: 0.5px solid currentColor;
+  border: 0.5px solid var(--line-strong);
   border-radius: 12px;
-  background: var(--card-bg, #f5f3ee);
+  background: var(--surface);
+  color: var(--text);
   display: flex;
   flex-direction: column;
   z-index: 99;
@@ -525,7 +526,7 @@ html.lang-ru [data-card-title] {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1rem;
-  border-bottom: 0.5px solid currentColor;
+  border-bottom: 0.5px solid var(--line-strong);
   opacity: 0.6;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
@@ -534,6 +535,7 @@ html.lang-ru [data-card-title] {
 [data-chat-close] {
   background: none;
   border: none;
+  color: inherit;
   cursor: pointer;
   font-size: 1.2rem;
   line-height: 1;
@@ -573,9 +575,10 @@ html.lang-ru [data-card-title] {
 .chat-chip {
   font-size: 0.75rem;
   padding: 4px 10px;
-  border: 0.5px solid currentColor;
+  border: 0.5px solid var(--line-strong);
   border-radius: 20px;
   background: transparent;
+  color: inherit;
   cursor: pointer;
   opacity: 0.65;
   line-height: 1.4;
@@ -588,14 +591,15 @@ html.lang-ru [data-card-title] {
   display: flex;
   gap: 8px;
   padding: 0.75rem 1rem;
-  border-top: 0.5px solid currentColor;
+  border-top: 0.5px solid var(--line-strong);
 }
 
 [data-chat-input] {
   flex: 1;
   background: transparent;
   border: none;
-  border-bottom: 0.5px solid currentColor;
+  border-bottom: 0.5px solid var(--line-strong);
+  color: inherit;
   padding: 4px 0;
   font-size: 0.875rem;
   outline: none;
@@ -605,6 +609,7 @@ html.lang-ru [data-card-title] {
 [data-chat-send] {
   background: none;
   border: none;
+  color: inherit;
   cursor: pointer;
   font-size: 1rem;
   padding: 0 4px;
