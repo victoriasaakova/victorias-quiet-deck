@@ -86,7 +86,7 @@ const cards = [
   {
     id: "08",
     title: "Private Gallery",
-    prompt: "What would you make if no one — including you — was watching?",
+    prompt: "What would you make if even you weren't watching?",
     image: "assets/images/private-gallery.jpg",
     art: {
       primary:
@@ -98,7 +98,7 @@ const cards = [
   {
     id: "09",
     title: "Behind the Glass",
-    prompt: "What becomes visible when you stop trying to change what you see?",
+    prompt: "What do you see when you stop trying to fix it?",
     image: "assets/images/behind-the-glass.jpg",
     art: {
       primary:
@@ -182,7 +182,7 @@ const cards = [
   {
     id: "16",
     title: "Moon Station",
-    prompt: "What ordinary thing reminds you that you belong to something larger?",
+    prompt: "What small thing connects you to something larger?",
     image: "assets/images/moon-station.jpg",
     art: {
       primary:
