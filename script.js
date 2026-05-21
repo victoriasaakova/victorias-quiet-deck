@@ -292,6 +292,7 @@ const diveButton = document.querySelector("[data-dive]");
 const diveModal = document.querySelector("[data-dive-modal]");
 const diveClose = document.querySelector("[data-dive-close]");
 const diveText = document.querySelector("[data-dive-text]");
+const diveQuestion = document.querySelector("[data-dive-question]");
 const diveInput = document.querySelector("[data-dive-input]");
 const diveSend = document.querySelector("[data-dive-send]");
 const diveResponse = document.querySelector("[data-dive-response]");
@@ -386,9 +387,13 @@ function setLanguage(lang) {
   updateLanguageButton();
   applyCard(cards[currentCardIndex]);
   if (diveButton) diveButton.textContent = lang === "ru" ? "Погрузиться" : "Go Deeper";
+  if (diveQuestion) {
+    diveQuestion.textContent =
+      lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
+  }
   if (diveInput) {
     diveInput.placeholder =
-      lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
+      lang === "ru" ? "расскажи в паре слов" : "tell me in a few words";
   }
 }
 
@@ -397,8 +402,12 @@ async function openDive() {
   const card = cards[currentCardIndex];
   const lang = currentLang;
   diveText.textContent = card.deeper[lang] || card.deeper.en;
+  diveQuestion.textContent =
+    lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
   diveResponse.textContent = "";
   diveInput.value = "";
+  diveInput.placeholder =
+    lang === "ru" ? "расскажи в паре слов" : "tell me in a few words";
   diveModal.removeAttribute("hidden");
 }
 

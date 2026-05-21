@@ -103,7 +103,6 @@
                 <p class="deck-card__prompt" data-card-prompt>
                   What are you projecting onto the place you want to reach?
                 </p>
-                <button data-dive type="button" data-dive-label-en="Go Deeper" data-dive-label-ru="Погрузиться">Go Deeper</button>
               </div>
             </article>
 
@@ -116,6 +115,7 @@
           </div>
 
           <div class="controls">
+            <button data-dive type="button" data-dive-label-en="Go Deeper" data-dive-label-ru="Погрузиться">Go Deeper</button>
             <button class="draw-button" type="button" data-draw-card>Pick a Card</button>
           </div>
         </section>
@@ -169,7 +169,8 @@
       </div>
       <div data-dive-text></div>
       <div data-dive-interact>
-        <input data-dive-input type="text" placeholder="What does this bring up for you?">
+        <p data-dive-question></p>
+        <input data-dive-input type="text" placeholder="tell me in a few words">
         <button data-dive-send>→</button>
       </div>
       <div data-dive-response></div>
