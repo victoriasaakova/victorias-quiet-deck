@@ -1,12 +1,3 @@
-const SYSTEM_PROMPT = `Ты — коучинговое присутствие в колоде метафорических карт "Victoria's Quiet Deck".
-Задавай один вопрос за раз. Без советов и интерпретаций — только открытые вопросы и отражение.
-Используй подход Теории U: замедление, присутствие, открытость.
-Язык: "что ты замечаешь...", "что это значит для тебя...", "что происходит прямо сейчас...".
-Работай с образом карты, не объясняй его. Отвечай на языке пользователя.`;
-
-let chatMessages = [];
-let chatOpen = false;
-
 const cards = [
   {
     id: "01",
@@ -281,11 +272,14 @@ const nextVisualElement = document.querySelector("[data-next-visual]");
 const drawButton = document.querySelector("[data-draw-card]");
 const languageButton = document.querySelector("[data-lang-toggle]");
 const themeButton = document.querySelector("[data-theme-toggle]");
-const chatToggle = document.querySelector("[data-chat-toggle]");
-const chatPanel = document.querySelector("[data-chat-panel]");
+const chatTrigger = document.querySelector("[data-chat-trigger]");
+const chatModal = document.querySelector("[data-chat-modal]");
+const chatClose = document.querySelector("[data-chat-close]");
 const chatMessagesEl = document.querySelector("[data-chat-messages]");
+const chatChipsEl = document.querySelector("[data-chat-chips]");
 const chatInput = document.querySelector("[data-chat-input]");
 const chatSend = document.querySelector("[data-chat-send]");
+const chatHeaderTitle = document.querySelector("[data-chat-header-title]");
 
 // ─── State ─────────────────────────────────────────────────────────────────────
 let currentCardIndex = 0;
@@ -379,48 +373,102 @@ function setLanguage(lang) {
 }
 
 // ─── Chat ──────────────────────────────────────────────────────────────────────
-function displayMessage(role, text) {
-  const messageElement = document.createElement("div");
-  messageElement.className = `chat-message chat-message--${role}`;
-  messageElement.textContent = text;
-  chatMessagesEl.append(messageElement);
+const CHIPS = {
+  en: [
+    "What am I feeling right now?",
+    "What is holding me back?",
+    "What do I truly want?",
+    "What would I do if I wasn't afraid?",
+  ],
+  ru: [
+    "Что я сейчас чувствую?",
+    "Что меня удерживает?",
+    "Чего я хочу на самом деле?",
+    "Что бы я сделал, если бы не боялся?",
+  ],
+};
+
+const OPENING = {
+  en: "Take a moment with this card. What comes up for you?",
+  ru: "Побудь немного с этой картой. Что в тебе откликается?",
+};
+
+const HEADER = { en: "Reflection", ru: "Рефлексия" };
+
+const SYSTEM_PROMPT = `You are a coaching presence for a metaphorical card deck called "Victoria's Quiet Deck".
+Rules:
+- Ask one question at a time
+- No advice, no interpretation — only open questions and reflection
+- Use Theory U approach: slowing down, presencing, openness
+- Language: "what do you notice...", "what does this mean for you...", "what is happening right now..."
+- Work with the card image, do not explain it
+- Always respond in the same language the user writes in`;
+
+let chatHistory = [];
+let chatInitialized = false;
+
+function renderChips() {
+  chatChipsEl.innerHTML = "";
+  CHIPS[currentLang].forEach((q) => {
+    const btn = document.createElement("button");
+    btn.className = "chat-chip";
+    btn.textContent = q;
+    btn.addEventListener("click", () => sendMessage(q));
+    chatChipsEl.appendChild(btn);
+  });
+}
+
+function addMessage(role, text) {
+  const div = document.createElement("div");
+  div.className = role === "user" ? "chat-msg-user" : "chat-msg-assistant";
+  div.textContent = text;
+  chatMessagesEl.appendChild(div);
   chatMessagesEl.scrollTop = chatMessagesEl.scrollHeight;
 }
 
-async function sendToAPI(userText) {
-  chatMessages.push({ role: "user", content: userText });
-  displayMessage("user", userText);
+async function sendMessage(text) {
+  if (!text.trim()) return;
+  addMessage("user", text);
+  chatInput.value = "";
 
-  const response = await fetch("/api/chat", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      messages: [{ role: "system", content: SYSTEM_PROMPT }, ...chatMessages],
-    }),
-  });
-  const data = await response.json();
-  const assistantText =
-    data.choices?.[0]?.message?.content || "Что ты замечаешь в этом сейчас?";
+  chatHistory.push({ role: "user", content: text });
 
-  chatMessages.push({ role: "assistant", content: assistantText });
-  displayMessage("assistant", assistantText);
-}
+  const messages = [{ role: "system", content: SYSTEM_PROMPT }, ...chatHistory];
 
-function initChat() {
-  const cardCopy = getCardCopy(cards[currentCardIndex]);
-  const initialMessage = `Карта: ${cardCopy.title}. Вопрос: ${cardCopy.prompt}`;
-  sendToAPI(initialMessage);
+  try {
+    const res = await fetch("/api/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages }),
+    });
+    const data = await res.json();
+    const reply = data.choices[0].message.content;
+    chatHistory.push({ role: "assistant", content: reply });
+    addMessage("assistant", reply);
+  } catch (e) {
+    addMessage(
+      "assistant",
+      currentLang === "ru" ? "Что-то пошло не так." : "Something went wrong.",
+    );
+  }
 }
 
 function openChat() {
-  chatOpen = true;
-  chatPanel.hidden = false;
-  if (chatMessages.length === 0) {
-    initChat();
+  chatModal.removeAttribute("hidden");
+  chatHeaderTitle.textContent = HEADER[currentLang];
+  renderChips();
+  if (!chatInitialized) {
+    chatInitialized = true;
+    const opening = OPENING[currentLang];
+    chatHistory = [{ role: "assistant", content: opening }];
+    addMessage("assistant", opening);
   }
-  chatInput.focus();
+}
+
+function resetChat() {
+  chatHistory = [];
+  chatInitialized = false;
+  chatMessagesEl.innerHTML = "";
 }
 
 // ─── Theme ─────────────────────────────────────────────────────────────────────
@@ -474,6 +522,7 @@ function applyCard(card) {
 function drawNextCard() {
   if (cards.length < 2) return;
 
+  resetChat();
   const nextIndex = drawFromDeck();
 
   // FIX: preload the image NOW, before the animation starts.
@@ -483,10 +532,7 @@ function drawNextCard() {
   preloadImg.src = resolveImagePath(cards[nextIndex].image);
 
   hasPickedOnce = true;
-  chatMessages = [];
-  chatOpen = false;
-  chatPanel.hidden = true;
-  chatMessagesEl.innerHTML = "";
+  chatModal.setAttribute("hidden", "");
   deckStack.classList.add("is-animating");
   cardElement.classList.add("is-changing");
 
@@ -514,18 +560,11 @@ languageButton.addEventListener("click", () => {
 
 drawButton.addEventListener("click", drawNextCard);
 
-chatToggle.addEventListener("click", openChat);
-
-chatSend.addEventListener("click", () => {
-  const userText = chatInput.value.trim();
-  if (!userText) return;
-  sendToAPI(userText);
-  chatInput.value = "";
-});
-
+chatTrigger.addEventListener("click", openChat);
+chatClose.addEventListener("click", () => chatModal.setAttribute("hidden", ""));
+chatSend.addEventListener("click", () => sendMessage(chatInput.value));
 chatInput.addEventListener("keydown", (event) => {
-  if (event.key !== "Enter") return;
-  chatSend.click();
+  if (event.key === "Enter") sendMessage(chatInput.value);
 });
 
 cardImageElement.addEventListener("load", () => {

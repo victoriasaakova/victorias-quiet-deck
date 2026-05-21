@@ -116,7 +116,6 @@
 
           <div class="controls">
             <button class="draw-button" type="button" data-draw-card>Pick a Card</button>
-            <button data-chat-toggle type="button" aria-label="Спросить о карте">Спросить о карте</button>
           </div>
         </section>
       </main>
@@ -163,11 +162,25 @@
       </footer>
     </div>
 
-    <div data-chat-panel hidden>
+    <!-- Chat trigger: fixed round button bottom right -->
+    <button data-chat-trigger aria-label="Open chat">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    </button>
+
+    <!-- Chat popup modal -->
+    <div data-chat-modal hidden>
+      <div data-chat-header>
+        <span data-chat-header-title>Reflection</span>
+        <button data-chat-close aria-label="Close">×</button>
+      </div>
       <div data-chat-messages></div>
+      <div data-chat-chips></div>
       <div data-chat-input-row>
-        <input data-chat-input type="text" placeholder="Напиши что думаешь...">
-        <button data-chat-send type="button">→</button>
+        <input data-chat-input type="text" autocomplete="off">
+        <button data-chat-send>→</button>
       </div>
     </div>
 
