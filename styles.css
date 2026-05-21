@@ -150,8 +150,14 @@ html[data-theme="dark"] .site-shell {
   line-height: 0.96;
 }
 
+.header-actions {
+  grid-column: 5 / 7;
+  justify-self: end;
+  align-self: end;
+}
+
+.language-toggle,
 .theme-toggle {
-  grid-column: 6;
   justify-self: end;
   align-self: end;
   width: 3rem;
@@ -171,6 +177,19 @@ html[data-theme="dark"] .site-shell {
     transform var(--transition);
 }
 
+.language-toggle {
+  grid-column: 5;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.theme-toggle {
+  grid-column: 6;
+}
+
+.language-toggle:hover,
+.language-toggle:focus-visible,
 .theme-toggle:hover,
 .theme-toggle:focus-visible,
 .draw-button:hover,
@@ -178,6 +197,7 @@ html[data-theme="dark"] .site-shell {
   transform: translateY(-1px);
 }
 
+.language-toggle:focus-visible,
 .theme-toggle:focus-visible,
 .draw-button:focus-visible {
   outline: 1px solid var(--line-strong);
@@ -419,6 +439,13 @@ html[data-theme="dark"] .site-shell {
   letter-spacing: -0.03em;
   margin-bottom: 0.1rem;
   max-width: 12ch;
+  white-space: nowrap;
+}
+
+html.lang-ru [data-card-title] {
+  font-family: "Lora", serif;
+  font-size: clamp(1.125rem, 1.75vw, 1.75rem);
+  letter-spacing: 0;
 }
 
 .deck-card__prompt {
@@ -532,8 +559,17 @@ html[data-theme="dark"] .site-shell {
     grid-column: 1 / span 2;
   }
 
+  .header-actions {
+    grid-column: 3 / 5;
+    justify-self: end;
+  }
+
+  .language-toggle {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
   .theme-toggle {
-    grid-column: 4;
     width: 2.7rem;
     height: 2.7rem;
   }
@@ -579,6 +615,12 @@ html[data-theme="dark"] .site-shell {
     padding-bottom: 1rem;
   }
 
+}
+
+@media (max-width: 600px) {
+  html.lang-ru [data-card-title] {
+    font-size: clamp(1rem, 5.5vw, 1.5rem);
+  }
 }
 
 @media (max-height: 840px) {

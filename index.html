@@ -34,6 +34,10 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -46,14 +50,28 @@
           <h1>Quiet Deck</h1>
         </div>
 
-        <button
-          class="theme-toggle"
-          type="button"
-          aria-label="Toggle theme"
-          data-theme-toggle
+        <div
+          class="header-actions"
+          style="display: flex; align-items: center; gap: 8px;"
         >
-          <span class="theme-toggle__label" data-theme-label>Dark</span>
-        </button>
+          <button
+            class="language-toggle"
+            type="button"
+            aria-label="Switch language to Russian"
+            data-lang-toggle
+          >
+            EN
+          </button>
+
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle theme"
+            data-theme-toggle
+          >
+            <span class="theme-toggle__label" data-theme-label>Dark</span>
+          </button>
+        </div>
       </header>
 
       <main class="main-layout">
@@ -97,7 +115,7 @@
           </div>
 
           <div class="controls">
-            <button class="draw-button" type="button" data-draw-card>Pick a card</button>
+            <button class="draw-button" type="button" data-draw-card>Pick a Card</button>
           </div>
         </section>
       </main>

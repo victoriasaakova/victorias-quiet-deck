@@ -3,6 +3,10 @@ const cards = [
     id: "01",
     title: "Mirage City",
     prompt: "What are you projecting onto the place you want to reach?",
+    ru: {
+      title: "Мираж",
+      prompt: "Что ты уже знаешь о будущем, которое ещё не наступило?",
+    },
     image: "assets/images/mirage-city.jpg",
     art: {
       primary:
@@ -15,6 +19,10 @@ const cards = [
     id: "02",
     title: "Tender Orbit",
     prompt: "What inside you is still alive and worth protecting?",
+    ru: {
+      title: "Орбита",
+      prompt: "Что в тебе ещё живо и просит о бережности?",
+    },
     image: "assets/images/tender-orbit.jpg",
     art: {
       primary:
@@ -27,6 +35,10 @@ const cards = [
     id: "03",
     title: "Distant Castle",
     prompt: "What are you waiting for before you allow yourself to want this?",
+    ru: {
+      title: "Дальний план",
+      prompt: "Чего ты ждёшь, чтобы разрешить себе это хотеть?",
+    },
     image: "assets/images/distant-castle.jpg",
     art: {
       primary:
@@ -39,6 +51,10 @@ const cards = [
     id: "04",
     title: "The In-Between",
     prompt: "What holds you when there is nothing to hold onto?",
+    ru: {
+      title: "Между",
+      prompt: "Что держит тебя, когда не за что держаться?",
+    },
     image: "assets/images/the-in-between.jpg",
     art: {
       primary:
@@ -51,6 +67,10 @@ const cards = [
     id: "05",
     title: "The Familiar",
     prompt: "What part of you sees clearly, even in the dark?",
+    ru: {
+      title: "То, что видит",
+      prompt: "Что в тебе видит ясно, даже когда темно?",
+    },
     image: "assets/images/the-familiar.jpg",
     art: {
       primary:
@@ -63,6 +83,10 @@ const cards = [
     id: "06",
     title: "Her Planet",
     prompt: "What would it mean to stop being a guest in your own life?",
+    ru: {
+      title: "Её планета",
+      prompt: "Что значит чувствовать себя дома в собственной жизни?",
+    },
     image: "assets/images/her-planet.jpg",
     art: {
       primary:
@@ -75,6 +99,10 @@ const cards = [
     id: "07",
     title: "Signal Garden",
     prompt: "What keeps returning to you until you finally pay attention?",
+    ru: {
+      title: "Сад сигналов",
+      prompt: "Что возвращается снова и снова, пока ты это не замечаешь?",
+    },
     image: "assets/images/signal-garden.jpg",
     art: {
       primary:
@@ -87,6 +115,10 @@ const cards = [
     id: "08",
     title: "Private Gallery",
     prompt: "What would you make if even you weren't watching?",
+    ru: {
+      title: "Личная галерея",
+      prompt: "Что рождается в тебе, когда нет ни одного взгляда, даже твоего?",
+    },
     image: "assets/images/private-gallery.jpg",
     art: {
       primary:
@@ -99,6 +131,10 @@ const cards = [
     id: "09",
     title: "Behind the Glass",
     prompt: "What do you see when you stop trying to fix it?",
+    ru: {
+      title: "За стеклом",
+      prompt: "Что ты видишь, когда перестаёшь пытаться это исправить?",
+    },
     image: "assets/images/behind-the-glass.jpg",
     art: {
       primary:
@@ -111,6 +147,10 @@ const cards = [
     id: "10",
     title: "Sky Instruments",
     prompt: "What helps you navigate when there are no maps?",
+    ru: {
+      title: "Небесный атлас",
+      prompt: "На что ты опираешься, когда нет ориентиров?",
+    },
     image: "assets/images/sky-instruments.jpg",
     art: {
       primary:
@@ -123,6 +163,10 @@ const cards = [
     id: "11",
     title: "The Current",
     prompt: "What is moving through you before you understand it?",
+    ru: {
+      title: "Течение",
+      prompt: "Что движется через тебя до того, как ты это понимаешь?",
+    },
     image: "assets/images/the-current.jpg",
     art: {
       primary:
@@ -135,6 +179,10 @@ const cards = [
     id: "12",
     title: "The Game World",
     prompt: "What would the rules be, if you were the one writing them?",
+    ru: {
+      title: "Мир игры",
+      prompt: "Что стало бы правилом, если бы мир создавался под тебя?",
+    },
     image: "assets/images/the-game-world.jpg",
     art: {
       primary:
@@ -147,6 +195,10 @@ const cards = [
     id: "13",
     title: "The Absolute",
     prompt: "What would you do if you stopped asking whether you are ready?",
+    ru: {
+      title: "Абсолют",
+      prompt: "Что становится возможным, когда вопрос о готовности исчезает?",
+    },
     image: "assets/images/the-absolute.jpg",
     art: {
       primary:
@@ -159,6 +211,10 @@ const cards = [
     id: "14",
     title: "The Long Way",
     prompt: "What kind of companion do you need for this passage?",
+    ru: {
+      title: "Долгий путь",
+      prompt: "Кто нужен рядом, чтобы пройти этот путь?",
+    },
     image: "assets/images/the-long-way.jpg",
     art: {
       primary:
@@ -171,6 +227,10 @@ const cards = [
     id: "15",
     title: "The Presence",
     prompt: "What is watching you from the edge of awareness?",
+    ru: {
+      title: "Присутствие",
+      prompt: "Что стоит на краю твоего внимания и ждёт, пока ты обернёшься?",
+    },
     image: "assets/images/the-presence.jpg",
     art: {
       primary:
@@ -183,6 +243,10 @@ const cards = [
     id: "16",
     title: "Moon Station",
     prompt: "What small thing connects you to something larger?",
+    ru: {
+      title: "Лунная станция",
+      prompt: "Что маленькое соединяет тебя с чем-то большим?",
+    },
     image: "assets/images/moon-station.jpg",
     art: {
       primary:
@@ -206,11 +270,13 @@ const cardImageElement = document.querySelector("[data-card-image]");
 const prevVisualElement = document.querySelector("[data-prev-visual]");
 const nextVisualElement = document.querySelector("[data-next-visual]");
 const drawButton = document.querySelector("[data-draw-card]");
+const languageButton = document.querySelector("[data-lang-toggle]");
 const themeButton = document.querySelector("[data-theme-toggle]");
 
 // ─── State ─────────────────────────────────────────────────────────────────────
 let currentCardIndex = 0;
 let hasPickedOnce = false;
+let currentLang = "en";
 
 // Shuffled deck: array of card indices dealt in order, refilled when empty.
 // This guarantees all cards are seen before any repeats.
@@ -261,7 +327,41 @@ function setPreviewArt(element, card) {
 }
 
 function updateButtonCopy() {
-  drawButton.textContent = hasPickedOnce ? "Pick Another" : "Pick a Card";
+  const buttonCopy = {
+    en: {
+      initial: "Pick a Card",
+      next: "Pick Another",
+    },
+    ru: {
+      initial: "Выбрать карту",
+      next: "Следующая карта",
+    },
+  };
+
+  drawButton.textContent = hasPickedOnce
+    ? buttonCopy[currentLang].next
+    : buttonCopy[currentLang].initial;
+}
+
+// ─── Language ──────────────────────────────────────────────────────────────────
+function getCardCopy(card) {
+  if (currentLang === "ru") return card.ru;
+  return card;
+}
+
+function updateLanguageButton() {
+  languageButton.textContent = currentLang.toUpperCase();
+  languageButton.setAttribute(
+    "aria-label",
+    currentLang === "ru" ? "Switch language to English" : "Switch language to Russian",
+  );
+  root.classList.toggle("lang-ru", currentLang === "ru");
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  updateLanguageButton();
+  applyCard(cards[currentCardIndex]);
 }
 
 // ─── Theme ─────────────────────────────────────────────────────────────────────
@@ -294,9 +394,10 @@ function getPreferredTheme() {
 
 // ─── Card rendering ────────────────────────────────────────────────────────────
 function applyCard(card) {
+  const cardCopy = getCardCopy(card);
   idElement.textContent = card.id;
-  titleElement.textContent = card.title;
-  promptElement.textContent = card.prompt;
+  titleElement.textContent = cardCopy.title;
+  promptElement.textContent = cardCopy.prompt;
   visualElement.style.setProperty("--art-primary", card.art.primary);
   visualElement.style.setProperty("--art-secondary", card.art.secondary);
 
@@ -344,6 +445,10 @@ themeButton.addEventListener("click", () => {
   setTheme(nextTheme);
 });
 
+languageButton.addEventListener("click", () => {
+  setLanguage(currentLang === "ru" ? "en" : "ru");
+});
+
 drawButton.addEventListener("click", drawNextCard);
 
 cardImageElement.addEventListener("load", () => {
@@ -356,6 +461,7 @@ cardImageElement.addEventListener("error", () => {
 
 // ─── Init ──────────────────────────────────────────────────────────────────────
 setTheme(getPreferredTheme());
+updateLanguageButton();
 applyCard(cards[currentCardIndex]);
 
 // Preload all card images on init so switching is instant
