@@ -408,6 +408,7 @@ async function openDive() {
   diveInput.value = "";
   diveInput.placeholder =
     lang === "ru" ? "расскажи в паре слов" : "tell me in a few words";
+  diveInput.style.height = "auto";
   diveModal.removeAttribute("hidden");
 }
 
@@ -542,6 +543,11 @@ diveClose.addEventListener("click", () => diveModal.setAttribute("hidden", ""));
 diveSend.addEventListener("click", sendDive);
 diveInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") sendDive();
+});
+const diveInputEl = document.querySelector("[data-dive-input]");
+diveInputEl.addEventListener("input", () => {
+  diveInputEl.style.height = "auto";
+  diveInputEl.style.height = `${Math.min(diveInputEl.scrollHeight, 128)}px`;
 });
 
 cardImageElement.addEventListener("load", () => {
