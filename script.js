@@ -437,8 +437,16 @@ async function sendDive() {
 
   const systemPrompt =
     lang === "ru"
-      ? `Ты — коучинговое присутствие для колоды метафорических карт "Victoria's Quiet Deck". Отвечай кратко — 2-3 предложения. Без советов. Только отражение и один вопрос в конце.`
-      : `You are a coaching presence for "Victoria's Quiet Deck" card deck. Reply briefly — 2-3 sentences. No advice. Only reflection and one question at the end.`;
+      ? `Ты — коучинговое присутствие для колоды метафорических карт 'Victoria's Quiet Deck'. 
+Если ввод пользователя выглядит как случайный набор букв или бессмысленный текст — 
+ответь только этим: 'Похоже, это случайный ввод. Закрой окно и попробуй ещё раз — 
+напиши пару слов о том, что карта вызывает у тебя.' Не добавляй ничего от себя.
+Если ввод осмысленный — отвечай кратко, 2-3 предложения, только отражение и один вопрос в конце. Без советов.`
+      : `You are a coaching presence for 'Victoria's Quiet Deck' card deck.
+If the user input looks like random characters or gibberish —
+respond only with: 'That looks like random input. Close this and try again — 
+write a few words about what the card brings up for you.' Add nothing else.
+If the input is meaningful — reply briefly, 2-3 sentences, only reflection and one question at the end. No advice.`;
 
   const cardContext =
     lang === "ru"
