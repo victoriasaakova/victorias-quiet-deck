@@ -391,7 +391,7 @@ function setLanguage(lang) {
   if (diveButton) diveButton.textContent = lang === "ru" ? "Погрузиться" : "Go Deeper";
   if (diveQuestion) {
     diveQuestion.textContent =
-      lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
+      lang === "ru" ? "С чем это резонирует?" : "What does this bring up for you?";
   }
   if (diveInput) {
     diveInput.placeholder =
@@ -404,7 +404,7 @@ function openDive() {
   const card = cards[currentCardIndex];
   const lang = currentLang;
 
-  diveQuestion.textContent = lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
+  diveQuestion.textContent = lang === "ru" ? "С чем это резонирует?" : "What does this bring up for you?";
   diveText.textContent = lang === "ru" ? card.deeper.ru : card.deeper.en;
   diveResponse.textContent = "";
   diveInput.value = "";
@@ -433,7 +433,7 @@ async function sendDive() {
   diveSend.disabled = true;
 
   diveInteract.style.display = "none";
-  diveQuestion.textContent = lang === "ru" ? "Интерпретация" : "Reflection";
+  diveQuestion.textContent = lang === "ru" ? "Рефлексия" : "Reflection";
   diveText.textContent = lang === "ru" ? "Думаю..." : "Thinking...";
 
   const systemPrompt =
