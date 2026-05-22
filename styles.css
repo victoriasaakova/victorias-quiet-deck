@@ -62,7 +62,7 @@ select {
 .site-shell {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow: clip;
   isolation: isolate;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.22), transparent 28%),
@@ -114,8 +114,9 @@ html[data-theme="dark"] .site-shell {
 }
 
 .site-header {
-  position: relative;
-  z-index: 1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: var(--frame-width);
   margin: 0 auto;
   display: grid;
@@ -559,7 +560,7 @@ html.lang-ru [data-card-title] {
   font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.45;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.75rem;
 }
 
 [data-dive-interact] {
@@ -671,8 +672,8 @@ html:not(.lang-ru) [data-dive-question] {
 }
 
 .site-footer__link iconify-icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: block;
   color: currentColor;
 }
@@ -694,10 +695,6 @@ html:not(.lang-ru) [data-dive-question] {
     min-height: 0;
   }
 
-  .site-footer__link iconify-icon {
-    width: 24px;
-    height: 24px;
-  }
 }
 
 @media (max-width: 700px) {
