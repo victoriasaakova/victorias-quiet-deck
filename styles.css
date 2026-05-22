@@ -537,6 +537,10 @@ html.lang-ru [data-card-title] {
   position: absolute;
   top: 0;
   right: 0;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -553,7 +557,7 @@ html.lang-ru [data-card-title] {
 [data-dive-text] {
   color: var(--muted);
   font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-size: 1rem;
   line-height: 1.45;
   margin-bottom: 1.75rem;
 }
@@ -591,7 +595,7 @@ html:not(.lang-ru) [data-dive-question] {
   border-bottom: 1px solid currentColor;
   color: inherit;
   padding: 4px 48px 4px 0;
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-size: 1rem;
   line-height: 1.45;
   font-family: inherit;
   outline: none;
@@ -799,6 +803,13 @@ html:not(.lang-ru) [data-dive-question] {
     background: var(--line-strong);
     border-radius: 2px;
     margin: 0 auto 1.25rem;
+  }
+
+  [data-dive-close] {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
   }
 
   [data-dive-input] {
