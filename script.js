@@ -289,10 +289,12 @@ const drawButton = document.querySelector("[data-draw-card]");
 const languageButton = document.querySelector("[data-lang-toggle]");
 const themeButton = document.querySelector("[data-theme-toggle]");
 const diveButton = document.querySelector("[data-dive]");
+const diveOverlay = document.querySelector("[data-dive-overlay]");
 const diveModal = document.querySelector("[data-dive-modal]");
 const diveClose = document.querySelector("[data-dive-close]");
 const diveText = document.querySelector("[data-dive-text]");
 const diveQuestion = document.querySelector("[data-dive-question]");
+const diveInteract = document.querySelector("[data-dive-interact]");
 const diveInput = document.querySelector("[data-dive-input]");
 const diveSend = document.querySelector("[data-dive-send]");
 const diveResponse = document.querySelector("[data-dive-response]");
@@ -398,51 +400,41 @@ function setLanguage(lang) {
 }
 
 // ─── Go deeper ────────────────────────────────────────────────────────────────
-async function openDive() {
+function openDive() {
   const card = cards[currentCardIndex];
   const lang = currentLang;
 
-  diveText.textContent = lang === "ru" ? "Читаю карту..." : "Reading the card...";
   diveQuestion.textContent = lang === "ru" ? "Что это для тебя?" : "What does this bring up for you?";
+  diveText.textContent = lang === "ru" ? card.deeper.ru : card.deeper.en;
   diveResponse.textContent = "";
   diveInput.value = "";
   diveInput.placeholder = lang === "ru" ? "расскажи в паре слов" : "tell me in a few words";
   diveInput.style.height = "auto";
+  diveInteract.style.display = "";
+
   diveModal.removeAttribute("hidden");
-
-  const systemPrompt = lang === "ru"
-    ? "Ты — поэтический голос колоды метафорических карт. Напиши 2-3 предложения о карте — коротко, образно, без пересказа деталей. Пиши как медитация. Никакого жаргона."
-    : "You are the poetic voice of a metaphorical card deck. Write 2-3 sentences about this card — brief, imagistic, no literal description. Write as meditation. No jargon.";
-
-  const cardInfo = lang === "ru"
-    ? "Карта: " + card.ru.title + ". Вопрос: " + card.ru.prompt + "."
-    : "Card: " + card.title + ". Question: " + card.prompt + ".";
-
-  try {
-    const res = await fetch("/api/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: cardInfo }
-        ]
-      })
-    });
-    const data = await res.json();
-    diveText.textContent = data.choices[0].message.content;
-  } catch {
-    diveText.textContent = lang === "ru" ? card.deeper.ru : card.deeper.en;
-  }
+  diveOverlay.removeAttribute("hidden");
 }
 
 async function sendDive() {
   const text = diveInput.value.trim();
-  if (!text) return;
-  const card = cards[currentCardIndex];
   const lang = currentLang;
+
+  const hasVowel = /[aeiouаеёиоуыэюя]/i.test(text);
+  if (!text || !hasVowel || text.length < 3) {
+    diveInput.value = "";
+    diveInput.placeholder = lang === "ru"
+      ? "попробуй написать чуть больше..."
+      : "try writing a bit more...";
+    return;
+  }
+
+  const card = cards[currentCardIndex];
   diveSend.disabled = true;
-  diveResponse.textContent = lang === "ru" ? "Думаю..." : "Thinking...";
+
+  diveInteract.style.display = "none";
+  diveQuestion.textContent = lang === "ru" ? "Интерпретация" : "Reflection";
+  diveText.textContent = lang === "ru" ? "Думаю..." : "Thinking...";
 
   const systemPrompt =
     lang === "ru"
@@ -466,10 +458,9 @@ async function sendDive() {
       }),
     });
     const data = await res.json();
-    diveResponse.textContent = data.choices[0].message.content;
+    diveText.textContent = data.choices[0].message.content;
   } catch {
-    diveResponse.textContent =
-      lang === "ru" ? "Что-то пошло не так." : "Something went wrong.";
+    diveText.textContent = lang === "ru" ? "Что-то пошло не так." : "Something went wrong.";
   }
   diveSend.disabled = false;
 }
@@ -535,6 +526,7 @@ function drawNextCard() {
 
   hasPickedOnce = true;
   diveModal.setAttribute("hidden", "");
+  diveOverlay.setAttribute("hidden", "");
   deckStack.classList.add("is-animating");
   cardElement.classList.add("is-changing");
 
@@ -563,7 +555,16 @@ languageButton.addEventListener("click", () => {
 drawButton.addEventListener("click", drawNextCard);
 
 diveButton.addEventListener("click", openDive);
-diveClose.addEventListener("click", () => diveModal.setAttribute("hidden", ""));
+diveClose.addEventListener("click", () => {
+  diveModal.setAttribute("hidden", "");
+  diveOverlay.setAttribute("hidden", "");
+});
+
+diveOverlay.addEventListener("click", () => {
+  diveModal.setAttribute("hidden", "");
+  diveOverlay.setAttribute("hidden", "");
+});
+
 diveSend.addEventListener("click", sendDive);
 diveInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") sendDive();
