@@ -420,13 +420,7 @@ async function sendDive() {
   const text = diveInput.value.trim();
   const lang = currentLang;
 
-  const hasVowel = /[aeiouаеёиоуыэюя]/i.test(text);
-  if (!text || !hasVowel || text.length < 3) {
-    diveResponse.textContent = lang === "ru"
-      ? "напиши пару слов — что первым приходит в голову?"
-      : "write a few words — what comes to mind first?";
-    return;
-  }
+  if (!text) return;
 
   const card = cards[currentCardIndex];
   diveSend.disabled = true;
@@ -434,6 +428,7 @@ async function sendDive() {
   diveInteract.style.display = "none";
   diveQuestion.textContent = lang === "ru" ? "Рефлексия" : "Reflection";
   diveText.textContent = lang === "ru" ? "Думаю..." : "Thinking...";
+  diveResponse.textContent = "";
 
   const systemPrompt =
     lang === "ru"
