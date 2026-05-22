@@ -622,11 +622,11 @@ html:not(.lang-ru) [data-dive-question] {
 [data-dive-send]:hover { opacity: 1; }
 
 [data-dive-response] {
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.7;
+  font-size: 0.75rem;
   font-style: italic;
-  opacity: 0.8;
+  opacity: 0.5;
+  margin-top: 0.5rem;
+  line-height: 1.5;
   min-height: 1rem;
 }
 

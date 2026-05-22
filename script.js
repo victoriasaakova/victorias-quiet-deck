@@ -422,10 +422,9 @@ async function sendDive() {
 
   const hasVowel = /[aeiouаеёиоуыэюя]/i.test(text);
   if (!text || !hasVowel || text.length < 3) {
-    diveInput.value = "";
-    diveInput.placeholder = lang === "ru"
-      ? "попробуй написать чуть больше..."
-      : "try writing a bit more...";
+    diveResponse.textContent = lang === "ru"
+      ? "напиши пару слов — что первым приходит в голову?"
+      : "write a few words — what comes to mind first?";
     return;
   }
 
