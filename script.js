@@ -576,19 +576,6 @@ diveInputEl.addEventListener("input", () => {
   diveInputEl.style.height = "auto";
   diveInputEl.style.height = `${Math.min(diveInputEl.scrollHeight, 128)}px`;
 });
-diveInput.addEventListener("focus", () => {
-  if (window.innerWidth <= 700) {
-    diveModal.classList.add("is-keyboard-open");
-    diveOverlay.setAttribute("hidden", "");
-  }
-});
-
-diveInput.addEventListener("blur", () => {
-  diveModal.classList.remove("is-keyboard-open");
-  if (!diveModal.hasAttribute("hidden")) {
-    diveOverlay.removeAttribute("hidden");
-  }
-});
 
 cardImageElement.addEventListener("load", () => {
   visualElement.classList.add("has-image");

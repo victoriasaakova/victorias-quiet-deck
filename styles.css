@@ -790,6 +790,7 @@ html:not(.lang-ru) [data-dive-question] {
     transform: none;
     border-radius: 16px 16px 0 0;
     padding: 1.25rem 1.25rem 2.5rem;
+    overflow-y: auto;
   }
 
   [data-dive-modal]::before {
@@ -800,17 +801,6 @@ html:not(.lang-ru) [data-dive-question] {
     background: var(--line-strong);
     border-radius: 2px;
     margin: 0 auto 1.25rem;
-  }
-
-  [data-dive-modal].is-keyboard-open {
-    top: 0;
-    bottom: 0;
-    border-radius: 0;
-    max-height: 100dvh;
-  }
-
-  [data-dive-modal].is-keyboard-open::before {
-    display: none;
   }
 
   [data-dive-close] {
